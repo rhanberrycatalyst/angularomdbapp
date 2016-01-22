@@ -32,9 +32,6 @@ angular.module('omdbApp').config(['$stateProvider', '$urlRouterProvider', functi
       controller: 'searchPage'
     });
 
-		// $stateProvider.state('/navBar', {
-    //   templateUrl: 'views/navBar.html',
-    //   controller: 'navbarCtrl'
-    // });
+		
 
 }]);
