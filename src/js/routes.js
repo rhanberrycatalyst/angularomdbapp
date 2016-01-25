@@ -5,66 +5,35 @@ angular.module('omdbApp').config(['$stateProvider', '$urlRouterProvider', functi
 	//this redirects unknown states to main
 	$urlRouterProvider.otherwise('/main');
 
+
+
+
 		$stateProvider.state('main', {
 			url: '/main',
-			templateUrl: 'templates/main.html',
+			templateUrl: '../src/templates/main.html',
 			controller: 'main'
-		});
-
-		$stateProvider.state('try', {
+		})
+		.state('try', {
 			url: '/try',
-				views: {
-					nav:{
-						templateUrl: 'try.html'
-					},
-
-					content:{
-						templateUrl: 'templates/try.html',
+						templateUrl: '../src/templates/try.html',
 						controller: 'try'
-					}
-				}
-		});
-
-		$stateProvider.state('/movieList', {
+		})
+		.state('/movieList', {
 			url: '/movieList',
-				views: {
-					nav:{
-						templateUrl: 'movieList.html'
-					},
-
-					content:{
-						templateUrl: 'templates/movieList.html',
+						templateUrl: '../src/templates/movieList.html',
 						controller: 'movieList'
-					}
-				}
-    });
 
-		$stateProvider.state('/movieDetail', {
+
+    })
+		.state('/movieDetail', {
 			url: '/movieDetail',
-				views: {
-					nav:{
-						templateUrl: 'movieDetail.html'
-					},
-
-					content:{
-						templateUrl: 'templates/movieDetail.html',
+						templateUrl: '../src/templates/movieDetail.html',
 						controller: 'movieDetail'
-					}
-				}
-    });
-
-		$stateProvider.state('/searchPage', {
+    })
+.state('/searchPage', {
 			url: '/searchPage',
-				views: {
-					nav:{
-						templateUrl: 'searchPage.html'
-					},
-
-					content:{
-						templateUrl: 'templates/searchPage.html',
+						templateUrl: '../src/templates/searchPage.html',
 						controller: 'searchPage'
-					}
-				}
     });
 
 

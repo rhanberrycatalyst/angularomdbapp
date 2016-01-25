@@ -1,4 +1,4 @@
 'use strict';
 
 angular.module('omdbApp')
-  .controller('Navbar',['$scope', function ($scope) {}]);
+  .controller('Navbar',['$scope', '$state', function ($scope, $state) {}]);

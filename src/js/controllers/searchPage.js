@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('omdbApp')
-  .controller('searchPage', ['$scope','$http', function ($scope, $http) {
+  .controller('searchPage', ['$scope','$state', '$http', function ($scope, $state, $http) {
 
     $scope.welcomeMsg = 'This is the search page';
 
@@ -22,6 +22,6 @@ angular.module('omdbApp')
 
       $scope.select = function(){
         this.setSelectionRange(0, this.value.length);
-      }
+      };
 
 }]);
