@@ -3,7 +3,7 @@
 angular.module('omdbApp').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
 	//this redirects unknown states to main
-	$urlRouterProvider.otherwise('/main');
+	$urlRouterProvider.otherwise('/');
 
 
 
@@ -18,19 +18,17 @@ angular.module('omdbApp').config(['$stateProvider', '$urlRouterProvider', functi
 						templateUrl: '../src/templates/try.html',
 						controller: 'try'
 		})
-		.state('/movieList', {
+		.state('movieList', {
 			url: '/movieList',
 						templateUrl: '../src/templates/movieList.html',
 						controller: 'movieList'
-
-
     })
-		.state('/movieDetail', {
+		.state('movieDetail', {
 			url: '/movieDetail',
 						templateUrl: '../src/templates/movieDetail.html',
 						controller: 'movieDetail'
     })
-.state('/searchPage', {
+.state('searchPage', {
 			url: '/searchPage',
 						templateUrl: '../src/templates/searchPage.html',
 						controller: 'searchPage'
