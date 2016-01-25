@@ -16,7 +16,9 @@
 	<script src="js/routes.js"></script>
 	<script src="js/controllers/main.js"></script>
 	<script src="js/controllers/try.js"></script>
-	<!-- <script src="js/controllers/searchPage.js"></script> -->
+	<script src="js/controllers/searchPage.js"></script>
+	<script src="js/controllers/navbar.js"></script>
+
 	<link rel="stylesheets" href="src/stylesheets/nativestyle.css">
 
 
@@ -24,34 +26,13 @@
 
 <body class="bannerspace" ng-app="omdbApp">
 	<!--this is a directive for ui.router-->
-	<ui-view></ui-view>
+
+	<script type="text/ng-template" id="src/templates/navbar.html"></script>
+	<div ui-view="nav"></div>
+	<div ui-view="content"></div>
 
 
-	<div class="container-fluid outerdiv">
-	      <nav class="navbar navbar-inverse navbar-fixed-top">
-	        <div class="container-fluid">
-	          <div class="navbar-header">
-	            <a class="navbar-brand" href="#">HOME</a>
-							<a class="navbar-brand" ui-sref='try'>TryPage</a>
-							<a class="navbar-brand" ui-sref='main'>Main</a>
-							<a class="navbar-brand" ui-sref='searchPage'>Search Page</a>
-							<a class="navbar-brand" ui-sref='movieDetail'>Movie Details</a>
-							<a class="navbar-brand" ui-sref='movieList'>Movie List</a>
-	          </div>
-	        </div>
-	      </nav>
 
-	      <div class="animated zoomInRight">
-	        <div class="input-group search-bar">
-	          <input type="text" ng-model="search" ng-model-options="{ debounce: 800 }" onclick="select()" class="form-control" placeholder="Enter full movie name" autofocus />
-	          <span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
-	        </div>
-
-	        <div id="main-info" ng-include="'templates/movieDetail.html'" class="col-md-8"></div>
-
-	        <div id="related-results" ng-include="'templates/movieList.html'" class="col-md-4 animated bounce related-results"></div>
-	      </div>
-	    </div>
 
 
 </body>

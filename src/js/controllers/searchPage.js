@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Movie2App')
+angular.module('omdbApp')
   .controller('searchPage', ['$scope','$http', function ($scope, $http) {
 
     $scope.welcomeMsg = 'This is the search page';

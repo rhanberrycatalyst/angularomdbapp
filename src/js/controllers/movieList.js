@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('Movie2App')
-  .controller('Movielist', function ($scope) {
+angular.module('omdbApp')
+  .controller('movieList', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

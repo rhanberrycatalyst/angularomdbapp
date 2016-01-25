@@ -1,4 +1,4 @@
 'use strict';
 
-angular.module('Movie2App')
+angular.module('omdbApp')
   .controller('Navbar',['$scope', function ($scope) {}]);

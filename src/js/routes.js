@@ -13,25 +13,60 @@ angular.module('omdbApp').config(['$stateProvider', '$urlRouterProvider', functi
 
 		$stateProvider.state('try', {
 			url: '/try',
-			templateUrl: 'templates/try.html',
-			controller: 'try'
+				views: {
+					nav:{
+						templateUrl: 'try.html'
+					},
+
+					content:{
+						templateUrl: 'templates/try.html',
+						controller: 'try'
+					}
+				}
 		});
 
 		$stateProvider.state('/movieList', {
-      templateUrl: 'views/movieList.html',
-      controller: 'movieList'
+			url: '/movieList',
+				views: {
+					nav:{
+						templateUrl: 'movieList.html'
+					},
+
+					content:{
+						templateUrl: 'templates/movieList.html',
+						controller: 'movieList'
+					}
+				}
     });
 
 		$stateProvider.state('/movieDetail', {
-      templateUrl: 'views/movieDetail.html',
-      controller: 'MovieDetail'
+			url: '/movieDetail',
+				views: {
+					nav:{
+						templateUrl: 'movieDetail.html'
+					},
+
+					content:{
+						templateUrl: 'templates/movieDetail.html',
+						controller: 'movieDetail'
+					}
+				}
     });
 
 		$stateProvider.state('/searchPage', {
-      templateUrl: 'views/searchPage.html',
-      controller: 'searchPage'
+			url: '/searchPage',
+				views: {
+					nav:{
+						templateUrl: 'searchPage.html'
+					},
+
+					content:{
+						templateUrl: 'templates/searchPage.html',
+						controller: 'searchPage'
+					}
+				}
     });
 
-		
+
 
 }]);
