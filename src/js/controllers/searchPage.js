@@ -3,10 +3,9 @@
 angular.module('omdbApp')
   .controller('searchPage', ['$scope','$state', '$http', function ($scope, $state, $http) {
 
-    $scope.welcomeMsg = 'This is the search page';
-
-
-    $scope.search = "Sherlock Holmes";
+    $scope.$watch('search',function(){
+		fetch();
+	   });
 
       function fetch(){
         $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
