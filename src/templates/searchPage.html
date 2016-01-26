@@ -1,14 +1,41 @@
+<style type="text/css">
+body {
+  margin-top: 70px;
+}
+</style>
+
 <div class="container-fluid outerdiv">
 
 
-      <div class="animated zoomInRight">
+
         <div class="input-group search-bar">
           <input type="text" ng-model="search" ng-model-options="{ debounce: 800 }" onclick="select()" class="form-control" placeholder="Enter full movie name" autofocus />
           <span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
         </div>
 
-        <div id="main-info" ng-include="'templates/movieDetail.html'" class="col-md-8"></div>
+        <div id="main-info" ng-include="'templates/movieDetail.html'" class="col-md-8">
+          <div ng-if="!details">
+      			Loading Results...
+      		</div>
+      		<div ng-if="details.Response==='True'">
+      		</div>
+      		<div ng-if="details.Response==='False'">
+      			No results found.
+      		</div>
+        </div>
 
-        <div id="related-results" ng-include="'templates/movieList.html'" class="col-md-4 animated bounce related-results"></div>
-      </div>
-    </div>
+        <div id="related-results" ng-include="'templates/movieList.html'" class="col-md-4 animated bounce related-results">
+          <div ng-if="related.Response!=='False!'">
+            Related Results:
+            <hr>
+            <ul>
+              <li ng-repeat="movie in related.Search">
+                <a ui-sref="view({imdbID: movie.imdbID})">
+                  {{movie.Title}}</a>, {{movie.Year}}
+              </li>
+            </ul>
+           </div>
+        </div>
+        <button ng-submit="addMovie()">Add To List</button>
+
+</div>

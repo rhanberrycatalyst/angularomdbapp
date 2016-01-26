@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('omdbApp')
-  .controller('searchPage', ['$scope','$state', '$http', function ($scope, $state, $http) {
+  .controller('searchPage', ['$scope','$state', '$http','movieListService', function ($scope, $state, $http, movieListService) {
 
     $scope.$watch('search',function(){
 		fetch();
@@ -13,7 +13,7 @@ angular.module('omdbApp')
 
         $http.get("http://www.omdbapi.com/?s=" + $scope.search)
         .then(function(response){ $scope.related = response.data; });
-      }
+      };
 
       $scope.update = function(movie){
         $scope.search = movie.Title;
