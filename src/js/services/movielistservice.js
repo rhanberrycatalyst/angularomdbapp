@@ -1,20 +1,20 @@
 'use strict';
 
 
-angular.module('omdbApp').service("movieListService", function(){
+angular.module('omdbApp').service('movieListService', function(){
   var movieList = [];
 
   function addMovie(theMovie){
     myCollection.push(theMovie);
-  }
+  };
 
-  function listMovie(movieList){
+  function listMovie(){
     return movieList;
-  }
+  };
 
   return{
     addMovie: addMovie,
-    listMovie: movieList
+    fetchMovies: listMovie
   };
 
 });
