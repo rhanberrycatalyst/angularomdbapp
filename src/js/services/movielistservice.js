@@ -14,7 +14,7 @@ angular.module('omdbApp').service("movieListService", function(){
 
   return{
     addMovie: addMovie,
-    movieList: listMovie
+    listMovie: movieList
   };
 
 });
